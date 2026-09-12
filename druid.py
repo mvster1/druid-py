@@ -67,8 +67,9 @@ def resize(src, out, w, h, keep):
     else:
         im = pyvips.Image.thumbnail(src, w, height=h, size="force")
     base, ext = os.path.splitext(os.path.basename(src))
-    dst = os.path.join(out or os.path.dirname(src),
-                       f"{base}___{im.width}x{im.height}{ext}")
+
+    dst = os.path.join(out or os.path.dirname(src), f"RESIZED___{base}___{im.width}x{im.height}{ext}") # filename written here
+    
     im.write_to_file(dst)
     return dst
 
