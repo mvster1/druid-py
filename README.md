@@ -24,3 +24,15 @@ image is forced to the exact size.
 
 the output format follows the original file extension. a file that would
 overwrite its own original gets a `-WIDTHxHEIGHT` suffix.
+
+## shortcut
+
+    powershell -ExecutionPolicy Bypass -File shortcut.ps1
+
+creates `druid.lnk`, which opens the app with no console window and uses
+`icon.ico`. move or copy it anywhere - desktop, start menu, taskbar - it
+points at absolute paths. pass a folder to create it there directly:
+
+    powershell -ExecutionPolicy Bypass -File shortcut.ps1 "$env:USERPROFILE\Desktop"
+
+run it again if you move the project or switch python versions.
