@@ -144,7 +144,7 @@ def main():
     if TkinterDnD:
         box.drop_target_register(DND_FILES)
         box.dnd_bind("<<Drop>>", lambda e: add(root.tk.splitlist(e.data)))
-        say("drop images here or use select images")
+        say("drop images here or click select images")
 
     root.mainloop()
 
