@@ -1,16 +1,16 @@
 <img src="icon.png" alt="druid" width="128">
 
-#### druid
+## druid
 
-batch image resizer. one file, no configuration.
+druid is a batch image resizer. all in one file, no configuration necessary.
 
-#### dependencies
+### dependencies
 
     pip install "pyvips[binary]" tkinterdnd2
 
-`tkinterdnd2` is optional: without it drag and drop is gone, the rest works.
+`tkinterdnd2` is optional: without it dragging and dropping images doesn't work, the rest works.
 
-#### usage
+### usage
 
     python druid.py        # or pythonw druid.py, no console window
 
