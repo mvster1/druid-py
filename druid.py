@@ -105,7 +105,7 @@ def main():
         say("no images")
 
     def run():
-        if not files:
+        if not files: # when no image is added
             return say("select at least one image")
         try:
             w, h = dim(width), dim(height)
@@ -121,18 +121,29 @@ def main():
         if not out:
             return
         ok, err = 0, ""
+
+        # for src in files:
+        #     name, ext = os.path.splitext(os.path.basename(src))
+        #     dst = os.path.join(out, name + ext)
+        #     if os.path.abspath(dst) == src:
+        #         dst = os.path.join(out, "%s-%dx%d%s" % (name, w, h, ext))
+        #     try:
+        #         resize(src, dst, w, h, keep.get())
+        #         ok += 1
+        #     except Exception as e:
+        #         err = err or "%s: %s" % (os.path.basename(src), e)
+        # say("%d of %d resized%s" % (ok, len(files),
+        #                             "  -  " + err if err else ""))
+        
         for src in files:
-            name, ext = os.path.splitext(os.path.basename(src))
-            dst = os.path.join(out, name + ext)
-            if os.path.abspath(dst) == src:
-                dst = os.path.join(out, "%s-%dx%d%s" % (name, w, h, ext))
+            name,ext = os.path.splitext(os.path.basename(src))
+            dst = os.path.join(out, f'{name}___{w}x{h}{ext}')
             try:
                 resize(src, dst, w, h, keep.get())
                 ok += 1
-            except Exception as e:
+            except Exception as e :
                 err = err or "%s: %s" % (os.path.basename(src), e)
-        say("%d of %d resized%s" % (ok, len(files),
-                                    "  -  " + err if err else ""))
+        say("%d of %d resized%s" % (ok, len(files), "  -  " + err if err else ""))
 
     ttk.Button(bot, text="select images",
                command=pick, cursor="hand2").grid(row=0, column=0)
