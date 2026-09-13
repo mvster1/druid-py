@@ -58,3 +58,6 @@ points at absolute paths. pass a folder to create it there directly:
 
 run it again if you move the project or switch python versions. opening druid
 a second time just brings the running window to the front.
+
+## credits
+the logo image was made by Hellraiser140[https://www.reddit.com/user/Hellraiser140/] on reddit[https://www.reddit.com/r/PixelArt/comments/cm5or7/oc_i_made_a_little_druid_sprite_for_my_first_ever/]
